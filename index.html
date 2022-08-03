@@ -34,8 +34,8 @@
 
     <h1 style = "border-top: 1px solid #ced4da; margin-top: 10px;"></h1>
     Loan installment <p  id = "loanInstallment"></p>
-    Total Interest <p id = "totalInterest"></p>
-    Amount Reapayable <p id = "loanRepayableAmount"></p>
+    Total Interest(Entire loan period) <p id = "totalInterest"></p>
+    Amount Reapayable(Entire loan period) <p id = "loanRepayableAmount"></p>
 </div>
 </div>   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>    
@@ -49,12 +49,13 @@
     let interestRate = document.getElementById("loanInterestInput").value; 
     let monthlyLoanInstallment = (loanAmount/loanPeriod) + (loanAmount * (interestRate / 100));
 
-    
+  if(loanAmount === ""){alert("empty loan amount")}else if (loanPeriod === ""){alert("empty loan period")} else if(interestRate === ""){alert("empty loan interest")} else {
     document.getElementById("loanInstallment").innerHTML = monthlyLoanInstallment;
     document.getElementById("loanRepayableAmount").innerHTML = monthlyLoanInstallment * loanPeriod;
 
     let calculateInterest = (monthlyLoanInstallment * loanPeriod) - loanAmount
     document.getElementById("totalInterest").innerHTML = calculateInterest;
+  }
 
 }
 
