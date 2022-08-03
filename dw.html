@@ -1,8 +1,0 @@
-const loanFunction = () => {
-    let loanAmount = document.getElementById("loanAmountInput").value;
-    let loanPeriod = document.getElementById("loanPeriodInput").value;
-    let interestRate = document.getElementById("loanInterestInput").value; 
-    let monthlyLoanInstallment = (loanAmount/loanPeriod) * interestRate;
-
-    document.getElementById("loanInstallment").innerHTML = monthlyLoanInstallment;
-}
