@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="number" name="" id="loanAmountInput" placeholder="Loan Amount">
+        <input type="number" name="" id="loanPeriodInput" placeholder="Loan Period">
+        <input type="number" name="" id="loanInterestInput" placeholder="Loan Interest">
+        <button onClick = "loanFunction()">Click Me</button>
+    <br />
+
+    Loan installment <p id = "loanInstallment"></p>
+    Amount Reapayable <p id = "loanRepayableAmount"></p>
+</body>
+
+<script>
+   
+    const loanFunction = () => {
+    let loanAmount = document.getElementById("loanAmountInput").value;
+    let loanPeriod = document.getElementById("loanPeriodInput").value;
+    let interestRate = document.getElementById("loanInterestInput").value; 
+    let monthlyLoanInstallment = (loanAmount/loanPeriod) + (loanAmount * (interestRate / 100));
+
+    document.getElementById("loanInstallment").innerHTML = monthlyLoanInstallment;
+    document.getElementById("loanRepayableAmount").innerHTML = monthlyLoanInstallment * loanPeriod;
+}
+
+
+</script>
+</html>
