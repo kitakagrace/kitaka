@@ -34,6 +34,7 @@
 
     <h1 style = "border-top: 1px solid #ced4da; margin-top: 10px;"></h1>
     Loan installment <p  id = "loanInstallment"></p>
+    Total Interest <p id = "totalInterest"></p>
     Amount Reapayable <p id = "loanRepayableAmount"></p>
 </div>
 </div>   
@@ -51,6 +52,9 @@
     
     document.getElementById("loanInstallment").innerHTML = monthlyLoanInstallment;
     document.getElementById("loanRepayableAmount").innerHTML = monthlyLoanInstallment * loanPeriod;
+
+    let calculateInterest = (monthlyLoanInstallment * loanPeriod) - loanAmount
+    document.getElementById("totalInterest").innerHTML = calculateInterest;
 
 }
 
