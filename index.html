@@ -29,7 +29,7 @@
             <span class="input-group-text" id="basic-addon1">Interest Rate</span>
             <input type="text" class="form-control" id="loanInterestInput" placeholder="Loan Interest" aria-describedby="basic-addon1">
           </div>
-          <button type="button" onClick = "loanFunction()" class="btn btn-warning">Warning</button>
+          <button type="button" onClick = "loanFunction()" class="btn btn-warning">Calculate Loan</button>
     <br />
 
     Loan installment <p id = "loanInstallment"></p>
@@ -51,7 +51,6 @@
     document.getElementById("loanInstallment").innerHTML = monthlyLoanInstallment;
     document.getElementById("loanRepayableAmount").innerHTML = monthlyLoanInstallment * loanPeriod;
 
-    alert("Contact Developer")
 }
 
 </script>
